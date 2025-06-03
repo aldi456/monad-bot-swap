@@ -1,26 +1,19 @@
-# 🪙 Monad Swap Bot (MON ↔ USDC)
-
-Bot ini secara otomatis melakukan swap token MON ↔ USDC di jaringan Monad Testnet.  
-Dirancang untuk berjalan **di Termux Android**, dengan fitur:
-
-- 🔁 Swap bolak-balik MON → USDC → MON
-- ⚖️ Swap 10% saldo MON → USDC dan 100% saldo USDC → MON
-- ⛔ Auto-stop jika saldo MON < 0.1 MON
-- 💨 Delay otomatis antar transaksi
-## 📦 File Penting
-
-| File         | Deskripsi |
-|--------------|-----------|
-| `mon-usdc.js` | Script bot swap utama |
-| `.env`       | Menyimpan private key dan endpoint |
-
----
-
-## 📲 Cara Jalankan Bot di Termux
-
-### 1. Clone Repo
-```bash
+# buka termux
+pkg update && pkg upgrade
 pkg install git -y
-git clone https://github.com/USERNAME/monad-swap-bot.git
-cd monad-swap-bot
-   
+# clone git
+git clone https://github.com/aldi456/monad-bot.git
+cd monad-bot
+# install node js
+pkg install nodejs -y
+# Install Dependency Project
+npm install ethers dotenv
+# buat file .env (untuk private key)
+nano .env
+PRIVATE_KEY=0x... # isi dengan private key wallet kamu
+PROVIDER_URL=https://testnet-rpc.monad.xyz
+ROUTER_ADDRESS=0x88B96aF200c8a9c35442C8AC6cd3D22695AaE4F0
+CTRL O simpan
+CTRL X Keluar
+# run bot
+node mon-usdc.js
