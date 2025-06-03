@@ -3,7 +3,7 @@ pkg update && pkg upgrade
 pkg install git -y
 # clone git
 git clone https://github.com/aldi456/monad-bot.git
-cd monad-bot
+cd monad-bot-swap
 # install node js
 pkg install nodejs -y
 # Install Dependency Project
